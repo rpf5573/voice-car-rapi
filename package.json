@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "pm2 start index.js",
-    "start-webhook": "pm2 start webhook.js"
+    "start-webhook": "pm2 start webhook.js",
+    "restart": "pm2 delete all && yarn start"
   }
 }
