@@ -9,10 +9,9 @@ app.post('/led', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  return res.status(201).send({ message: '진짜 바뀌었네 ㅋㅋ' });
+  return res.status(201).send({ message: '또 바 끼 네' });
 })
 
 var server = require('http').Server(app);
 let PORT = 8081;
 server.listen(PORT, 'localhost');
-
