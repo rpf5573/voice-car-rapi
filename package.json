@@ -9,5 +9,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "pm2": "^3.3.1"
+  },
+  "scripts": {
+    "start": "pm2 start index.js"
   }
 }
