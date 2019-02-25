@@ -9,11 +9,9 @@ app.post('/led', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  return res.status(201).send({ message: '이거 리얼 진성이구만! 따악 드갔네' });
+  return res.status(201).send({ message: '뾰로롱!' });
 })
 
 var server = require('http').Server(app);
 let PORT = 8081;
 server.listen(PORT, 'localhost');
-
-
