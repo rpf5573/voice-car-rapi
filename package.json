@@ -1,0 +1,13 @@
+{
+  "name": "rpf5573",
+  "version": "1.0.0",
+  "description": "voice recognigation car",
+  "main": "index.js",
+  "author": "rpf5573",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pm2": "^3.3.1"
+  }
+}
