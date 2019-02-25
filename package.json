@@ -12,7 +12,6 @@
   },
   "scripts": {
     "start": "pm2 start index.js --name car01",
-    "restart": "pm2 stop --silent car01 && pm2 delete --silent car01 && yarn start"
+    "restart": "pm2 delete -s car01 || : && yarn start"
   }
 }
-
