@@ -9,7 +9,7 @@ app.post('/led', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  return res.status(201).send({ message: '솔직하게 물어보시면,, 민망해욧!!' });
+  return res.status(201).send({ message: '그건 고라지!!' });
 })
 
 var server = require('http').Server(app);
