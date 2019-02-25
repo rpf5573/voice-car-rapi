@@ -19,7 +19,7 @@ http.createServer(function(req, res){
 }).listen(8080);
 
 function deploy(res){
-  exec('/home/pi/voice-car/deploy.sh', function(err, stdout, stderr){
+  exec('sudo /home/pi/voice-car/deploy.sh', function(err, stdout, stderr){
     console.log('deploy.sh is called');
     if (err) {
       console.error(err);
