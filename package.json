@@ -15,5 +15,3 @@
     "restart": "pm2 stop --silent car01 && pm2 delete --silent car01 && yarn start"
   }
 }
-
-
