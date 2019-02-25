@@ -1,6 +1,7 @@
 var GPIO = require('onoff').Gpio;
 var LED = new GPIO(4, 'out');
 var pushButton = new GPIO(17, 'in', 'both');
+var isOn = false;
 
 pushButton.watch(function(err, value) {
   if (err) {
@@ -9,8 +10,8 @@ pushButton.watch(function(err, value) {
   }
 
   console.log( 'pushButton value : ', value );
-
   LED.writeSync(value);
+
 });
 
 function unexportOnClose() {

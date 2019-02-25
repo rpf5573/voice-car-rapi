@@ -1,3 +1,16 @@
+var GPIO = require('onoff').Gpio;
+var LED = new GPIO(4, 'out');
+var pushButton = new GPIO(17, 'in', 'both');
+var isOn = false;
+
+function unexportOnClose() {
+  LED.writeSync(0);
+  LED.unexport();
+  pushButton.unexport();
+}
+process.on('SIGINT', unexportOnClose);
+
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -5,7 +18,12 @@ const app = express();
 app.use(bodyParser.json());
 
 app.post('/led', (req, res) => {
-  return res.status(201).send({ message: 'hey' });
+  if ( req.body.on ) {
+    LED.writeSync(1);
+  } else {
+    LED.writeSync(0);
+  }
+  return res.status(201).send({ message: 'OK !' });
 });
 
 app.get('/', (req, res) => {
