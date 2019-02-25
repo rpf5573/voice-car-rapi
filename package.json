@@ -7,8 +7,7 @@
   "license": "MIT",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "pm2": "^3.3.1"
+    "express": "^4.16.4"
   },
   "scripts": {
     "start": "pm2 start index.js",
