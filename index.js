@@ -9,7 +9,7 @@ app.post('/led', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  return res.status(201).send({ message: 'hey' });
+  return res.status(201).send({ message: '진짜 바뀌었네 ㅋㅋ' });
 })
 
 var server = require('http').Server(app);
