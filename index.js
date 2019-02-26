@@ -26,14 +26,10 @@ const sleep = (howLong) => {
 }
 
 app.get('/led-on', async (req, res) => {
-  if ( req.body.on ) {
-    var test = 100;
-    for(var i = 0; i < test; i++){
-      await sleep(100);
-      LED.writeSync(1);
-    }
-  } else {
-    LED.writeSync(0);
+  var test = 100;
+  for(var i = 0; i < test; i++){
+    await sleep(100);
+    LED.writeSync(1);
   }
   return res.status(201).send({ message: 'OK !' });
 });
