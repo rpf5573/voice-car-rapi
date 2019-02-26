@@ -26,11 +26,7 @@ const sleep = (howLong) => {
 }
 
 app.get('/led-on', async (req, res) => {
-  var test = 100;
-  for(var i = 0; i < test; i++){
-    await sleep(100);
-    LED.writeSync(1);
-  }
+  LED.writeSync(1);
   return res.status(201).send({ message: 'OK !' });
 });
 
@@ -41,4 +37,3 @@ app.get('/', (req, res) => {
 var server = require('http').Server(app);
 let PORT = 8081;
 server.listen(PORT, 'localhost');
-
