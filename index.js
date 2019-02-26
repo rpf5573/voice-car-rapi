@@ -25,7 +25,7 @@ const sleep = (howLong) => {
   })
 }
 
-app.post('/led', async (req, res) => {
+app.get('/led-on', async (req, res) => {
   if ( req.body.on ) {
     var test = 100;
     for(var i = 0; i < test; i++){
