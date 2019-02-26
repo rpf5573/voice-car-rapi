@@ -1,3 +1,12 @@
+// server setting
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+app.use(bodyParser.json());
+
+
+// led setting
 var GPIO = require('onoff').Gpio;
 var LED = new GPIO(4, 'out');
 var pushButton = new GPIO(17, 'in', 'both');
@@ -10,16 +19,19 @@ function unexportOnClose() {
 }
 process.on('SIGINT', unexportOnClose);
 
+const sleep = (howLong) => { 
+  return new Promise((resolve) => {
+    setTimeout(resolve, howLong);
+  })
+}
 
-const express = require('express');
-const bodyParser = require('body-parser');
-
-const app = express();
-app.use(bodyParser.json());
-
-app.post('/led', (req, res) => {
+app.post('/led', async (req, res) => {
   if ( req.body.on ) {
-    LED.writeSync(1);
+    var test = 100;
+    for(var i = 0; i < test; i++){
+      await sleep(100);
+      LED.writeSync(1);
+    }
   } else {
     LED.writeSync(0);
   }
