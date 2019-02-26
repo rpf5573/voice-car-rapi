@@ -27,7 +27,12 @@ const sleep = (howLong) => {
 
 app.get('/led-on', async (req, res) => {
   LED.writeSync(1);
-  return res.status(201).send({ message: 'OK !' });
+  return res.status(201).send({ message: 'LED ON' });
+});
+
+app.get('/led-off', async (req, res) => {
+  LED.writeSync(0);
+  return res.status(201).send({ message: 'LED OFF' });
 });
 
 app.get('/', (req, res) => {
