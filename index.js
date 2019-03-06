@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-
 // led setting
 var GPIO = require('onoff').Gpio;
 var LED = new GPIO(4, 'out');
