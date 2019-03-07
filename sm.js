@@ -18,7 +18,6 @@ in1.digitalWrite(HIGH);
 in2.digitalWrite(LOW);
 
 process.on("SIGINT", function(){
-
 	in1.digitalWrite(LOW);
 	in2.digitalWrite(LOW);
 

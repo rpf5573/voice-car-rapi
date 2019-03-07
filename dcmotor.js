@@ -8,24 +8,24 @@ console.log("DC Motor start to play !");
 
 l298n.forward(l298n.NO1);
 
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
 
-// rl.on('line', function (input) {
-//   if (input === 'quit()') {
-//     rl.close();
-//   } else if (input === 'f') {
-//     l298n.forward(l298n.NO1);
-//   } else if (input === 'b') {
-//     l298n.backward(l298n.NO1)
-//   } else if (input === 't') {
-//     l298n.stop(l298n.NO1);
-//   } else {
-//     l298n.setSpeed(l298n.NO1,parseInt(input));
-//   }
-// });
+rl.on('line', function (input) {
+  if (input === 'quit()') {
+    rl.close();
+  } else if (input === 'f') {
+    l298n.forward(l298n.NO1);
+  } else if (input === 'b') {
+    l298n.backward(l298n.NO1)
+  } else if (input === 't') {
+    l298n.stop(l298n.NO1);
+  } else {
+    l298n.setSpeed(l298n.NO1,parseInt(input));
+  }
+});
 
 process.on("SIGINT", function(){
   l298n.stop(l298n.NO1);
