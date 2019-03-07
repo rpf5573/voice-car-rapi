@@ -6,8 +6,6 @@ l298n.setSpeed(l298n.NO1,80);
 
 console.log("DC Motor start to play !");
 
-l298n.forward(l298n.NO1);
-
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
