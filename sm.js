@@ -14,8 +14,7 @@ Object.assign(PinPWM.prototype, {
             return;
         }
         let dutyCycle = (MAX - MIN) * p / 100 + MIN;
-        console.log( 'dutyCycle : ', dutyCycle );
         this.gpio.pwmWrite(parseInt(dutyCycle));
     }
 });
-module.exports = PinPWM;
+

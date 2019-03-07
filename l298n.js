@@ -43,6 +43,7 @@ Object.assign(L298N.prototype, {
         enPort(dNum).setSpeedPercent(speed);
     },
     forward : function(dNum) {
+        console.log( 'forward is called' );
         in1Port(dNum).HIGH();
         in2Port(dNum).LOW();
     },

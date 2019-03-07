@@ -2,7 +2,7 @@ const readline = require('readline');
 const L298N = require('./l298n.js');
 
 let l298n = new L298N(17,27,22,null,null,null);
-l298n.setSpeed(l298n.NO1,20);
+l298n.setSpeed(l298n.NO1,80);
 
 console.log("DC Motor start to play !");
 
