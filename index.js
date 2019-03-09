@@ -22,7 +22,9 @@ app.get('/backward', async (req, res) => {
 
 app.get('/', (req, res) => {
   return res.status(201).send({ message: '여긴 왜왔어? 왜 자꾸와?? 니가 자꾸 오면,,, 내가 기다리게 되잖아ㅠㅠ' });
-})
+});
+
+console.log("car is moving !");
 
 var server = require('http').Server(app);
 let PORT = 8081;
