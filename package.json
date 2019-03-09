@@ -12,7 +12,7 @@
     "pm2": "^3.3.1"
   },
   "scripts": {
-    "start": "pm2 start index.js --name car01",
-    "restart": "pm2 delete -s car01 || : && yarn start"
+    "start": "sudo pm2 start index.js --name car01",
+    "restart": "sudo pm2 delete -s car01 || : && sudo yarn start"
   }
 }

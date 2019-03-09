@@ -7,10 +7,8 @@ app.use(bodyParser.json());
 
 // mortor setting
 const L298N = require('./l298n.js');
-
 let l298n = new L298N(17,27,22,null,null,null);
 l298n.setSpeed(l298n.NO1,80);
-
 
 app.get('/forward', async (req, res) => {
   return res.status(201).send({ message: '알았어 앞으로 갈께' });
