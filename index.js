@@ -5,37 +5,23 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
-// led setting
-var GPIO = require('onoff').Gpio;
-var LED = new GPIO(4, 'out');
-var pushButton = new GPIO(17, 'in', 'both');
-var isOn = false;
+// mortor setting
+const L298N = require('./l298n.js');
 
-function unexportOnClose() {
-  LED.writeSync(0);
-  LED.unexport();
-  pushButton.unexport();
-}
-process.on('SIGINT', unexportOnClose);
+let l298n = new L298N(17,27,22,null,null,null);
+l298n.setSpeed(l298n.NO1,80);
 
-const sleep = (howLong) => { 
-  return new Promise((resolve) => {
-    setTimeout(resolve, howLong);
-  })
-}
 
-app.get('/led-on', async (req, res) => {
-  LED.writeSync(1);
-  return res.status(201).send({ message: 'LED ON' });
+app.get('/forward', async (req, res) => {
+  return res.status(201).send({ message: '알았어 앞으로 갈께' });
 });
 
-app.get('/led-off', async (req, res) => {
-  LED.writeSync(0);
-  return res.status(201).send({ message: 'LED OFF' });
+app.get('/backward', async (req, res) => {
+  return res.status(201).send({ message: '알았어 뒤로 갈께' });
 });
 
 app.get('/', (req, res) => {
-  return res.status(201).send({ message: '그건 고라지!!' });
+  return res.status(201).send({ message: '여긴 왜왔어? 왜 자꾸와?? 니가 자꾸 오면,,, 내가 기다리게 되잖아ㅠㅠ' });
 })
 
 var server = require('http').Server(app);
